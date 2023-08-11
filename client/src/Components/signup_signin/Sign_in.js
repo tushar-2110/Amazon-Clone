@@ -34,15 +34,19 @@ const Sign_in = () => {
         const { email, password } = logdata;
         // console.log(email);
         try {
-            const res = await fetch("/login", {
+            const res = await fetch(
+              "https://amazon-clone-8ovr.onrender.com/login",
+              {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    email, password
-                })
-            });
+                  email,
+                  password,
+                }),
+              }
+            );
 
 
             const data = await res.json();

@@ -12,14 +12,17 @@ const Option = ({ deletedata, get }) => {
 
     const removedata = async (id) => {
         try {
-            const res = await fetch(`remove/${id}`, {
+            const res = await fetch(
+              `https://amazon-clone-8ovr.onrender.com/remove/${id}`,
+              {
                 method: "GET",
                 headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json"
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
                 },
-                credentials: "include"
-            });
+                credentials: "include",
+              }
+            );
 
             const data = await res.json();
             // console.log(data);

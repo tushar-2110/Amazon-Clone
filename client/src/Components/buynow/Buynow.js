@@ -12,14 +12,17 @@ const Buynow = () => {
     // console.log(cartdata.length);
 
     const getdatabuy = async () => {
-        const res = await fetch("/cartdetails", {
+        const res = await fetch(
+          "https://amazon-clone-8ovr.onrender.com/cartdetails",
+          {
             method: "GET",
             headers: {
-                Accept:"application/json",
-                "Content-Type": "application/json"
+              Accept: "application/json",
+              "Content-Type": "application/json",
             },
-            credentials:"include"
-        });
+            credentials: "include",
+          }
+        );
 
         const data = await res.json();
         // console.log(data.carts);

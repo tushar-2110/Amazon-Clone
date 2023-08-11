@@ -23,14 +23,17 @@ const Cart = () => {
     // console.log([inddata]);
 
     const getinddata = async () => {
-        const res = await fetch(`/getproductsone/${id}`, {
+        const res = await fetch(
+          `https://amazon-clone-8ovr.onrender.com/getproductsone/${id}`,
+          {
             method: "GET",
             headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
+              Accept: "application/json",
+              "Content-Type": "application/json",
             },
-            credentials: "include"
-        });
+            credentials: "include",
+          }
+        );
 
         const data = await res.json();
         // console.log(data);
@@ -49,17 +52,20 @@ const Cart = () => {
 
     const addtocart = async (id) => {
         console.log(id);
-        const check = await fetch(`/addcart/${id}`, {
+        const check = await fetch(
+          `https://amazon-clone-8ovr.onrender.com/addcart/${id}`,
+          {
             method: "POST",
             headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
+              Accept: "application/json",
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                inddata
+              inddata,
             }),
-            credentials: "include"
-        });
+            credentials: "include",
+          }
+        );
         // console.log(check);
         const data1 = await check.json();
         // console.log(data1 +  'ok');

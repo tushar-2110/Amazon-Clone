@@ -61,14 +61,17 @@ const Navbaar = () => {
     const { account, setAccount } = useContext(Logincontext);
 
     const getdetailsvaliduser = async () => {
-        const res = await fetch("/validuser", {
+        const res = await fetch(
+          "https://amazon-clone-8ovr.onrender.com/validuser",
+          {
             method: "GET",
             headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
+              Accept: "application/json",
+              "Content-Type": "application/json",
             },
-            credentials: "include"
-        });
+            credentials: "include",
+          }
+        );
 
         const data = await res.json();
         // console.log(data);
@@ -88,14 +91,17 @@ const Navbaar = () => {
 
     // for logout
     const logoutuser = async () => {
-        const res2 = await fetch("/logout", {
+        const res2 = await fetch(
+          "https://amazon-clone-8ovr.onrender.com/logout",
+          {
             method: "GET",
             headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
+              Accept: "application/json",
+              "Content-Type": "application/json",
             },
-            credentials: "include"
-        });
+            credentials: "include",
+          }
+        );
 
         const data2 = await res2.json();
         // console.log(data2);
